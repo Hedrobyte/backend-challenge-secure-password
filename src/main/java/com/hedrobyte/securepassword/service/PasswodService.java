@@ -14,6 +14,8 @@ public class PasswodService {
         validateLength(password, failures);
         validateUpperCase(password, failures);
         validateLowerCase(password, failures);
+        validateDigit(password, failures);
+
 
         return failures;
     }
@@ -33,6 +35,12 @@ public class PasswodService {
     private void validateLowerCase(String password, List<String> failures) {
         if (password != null && !password.matches(".*[a-z].*")) {
             failures.add("A senha deve conter pelo menos uma letra minúscula");
+        }
+    }
+
+    private void validateDigit(String password, List<String> failures) {
+        if (password != null && !password.matches(".*\\d.*")) {
+            failures.add("A senha deve conter pelo menos um dígito numérico");
         }
     }
 

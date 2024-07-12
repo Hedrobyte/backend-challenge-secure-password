@@ -36,4 +36,11 @@ public class PasswodServiceTest {
         assertEquals("A senha deve conter pelo menos uma letra minúscula", failures.get(0));
     }
 
+    @Test
+    public void testPasswordDigit() {
+        List<String> failures = passwodService.validatePassword("aA!bbbbb");
+        assertEquals(1, failures.size());
+        assertEquals("A senha deve conter pelo menos um dígito numérico", failures.get(0));
+    }
+
 }
