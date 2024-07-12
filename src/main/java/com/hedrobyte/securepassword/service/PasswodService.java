@@ -15,7 +15,7 @@ public class PasswodService {
         validateUpperCase(password, failures);
         validateLowerCase(password, failures);
         validateDigit(password, failures);
-
+        validateSpecialChar(password, failures);
 
         return failures;
     }
@@ -41,6 +41,12 @@ public class PasswodService {
     private void validateDigit(String password, List<String> failures) {
         if (password != null && !password.matches(".*\\d.*")) {
             failures.add("A senha deve conter pelo menos um dígito numérico");
+        }
+    }
+
+    private void validateSpecialChar(String password, List<String> failures) {
+        if (password != null && !password.matches(".*[\\W].*")) {
+            failures.add("A senha deve conter pelo menos um caractere especial");
         }
     }
 

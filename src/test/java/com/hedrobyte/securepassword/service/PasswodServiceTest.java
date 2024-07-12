@@ -43,4 +43,11 @@ public class PasswodServiceTest {
         assertEquals("A senha deve conter pelo menos um dígito numérico", failures.get(0));
     }
 
+    @Test
+    public void testPasswordSpecialChar() {
+        List<String> failures = passwodService.validatePassword("aA12345678");
+        assertEquals(1, failures.size());
+        assertEquals("A senha deve conter pelo menos um caractere especial", failures.get(0));
+    }
+
 }
