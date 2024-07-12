@@ -45,10 +45,9 @@ public class PasswodService {
     }
 
     private void validateSpecialChar(String password, List<String> failures) {
-        if (password != null && !password.matches(".*[\\W].*")) {
+        if (password != null && !password.matches(".*\\W.*")) {
             failures.add("A senha deve conter pelo menos um caractere especial");
         }
     }
-
 
 }

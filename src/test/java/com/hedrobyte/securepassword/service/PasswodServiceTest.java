@@ -50,4 +50,10 @@ public class PasswodServiceTest {
         assertEquals("A senha deve conter pelo menos um caractere especial", failures.get(0));
     }
 
+    @Test
+    public void testPasswordValid() {
+        List<String> failures = passwodService.validatePassword("Val1dPa55word!");
+        assertEquals(0, failures.size(), "A senha válida não deveria ter falhas.");
+    }
+
 }
