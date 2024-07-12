@@ -28,4 +28,12 @@ public class PasswodServiceTest {
         assertEquals(1, failures.size());
         assertEquals("A senha deve conter pelo menos uma letra maiúscula", failures.get(0));
     }
+
+    @Test
+    public void testPasswordLowerCase() {
+        List<String> failures = passwodService.validatePassword("12345678A!");
+        assertEquals(1, failures.size());
+        assertEquals("A senha deve conter pelo menos uma letra minúscula", failures.get(0));
+    }
+
 }
