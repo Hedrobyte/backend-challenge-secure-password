@@ -12,6 +12,7 @@ public class PasswodService {
         List<String> failures = new ArrayList<>();
 
         validateLength(password, failures);
+        validateUpperCase(password, failures);
 
         return failures;
     }
@@ -19,6 +20,12 @@ public class PasswodService {
     private void validateLength(String password, List<String> failures) {
         if (password != null && password.length() < 8) {
             failures.add("A senha deve conter pelo menos 8 caracteres");
+        }
+    }
+
+    private void validateUpperCase(String password, List<String> failures) {
+        if (password != null && !password.matches(".*[A-Z].*")) {
+            failures.add("A senha deve conter pelo menos uma letra maiúscula");
         }
     }
 
