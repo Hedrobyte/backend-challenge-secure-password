@@ -16,7 +16,7 @@ public class ApiController {
         this.passwodService = passwodService;
     }
 
-    @PostMapping
+    @PostMapping(value="validate-password")
     public ResponseEntity<List<String>> isSafe(@RequestBody BodyRequest request) {
         var failures = passwodService.validatePassword(request.password());
 
